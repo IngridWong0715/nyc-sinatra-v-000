@@ -7,6 +7,7 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
+
     @figure = Figure.new(params[:figure])
     if !params[:title][:name].empty?
       @figure.titles.build(params[:title])
@@ -17,7 +18,7 @@ class FiguresController < ApplicationController
     end
     @figure.save
 
-    binding.pry
+
   end
 
 end
