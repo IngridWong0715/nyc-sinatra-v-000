@@ -1,5 +1,9 @@
 class FiguresController < ApplicationController
 
+  get '/figures' do
+    erb :'figures/index'
+  end
+
   get '/figures/new' do
     @titles = Title.all
     @landmarks = Landmark.all
@@ -18,7 +22,9 @@ class FiguresController < ApplicationController
     end
     @figure.save
 
-
+    redirect '/figures'
   end
+
+
 
 end
